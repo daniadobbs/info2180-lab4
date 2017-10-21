@@ -11,7 +11,7 @@ window.onload= function(){
 	_status.textContent= "Click the S to begin";
 	start.onclick=gameStart;
 	end.onmouseover=gameEnd;
-	maze.onmouseleave=noCheats;
+	maze.onmouseleave=turnRed;
 	
   for(var i=0;i<boundaries.length;i++){
     boundaries[i].onmouseover=turnRed;
@@ -33,6 +33,9 @@ function gameEnd(){
 	if (winner){
 		_status.textContent= "Congratulations! You Win! (Click the 'S' to play again)";	
 	}
+	else{
+		_status.textContent= "Awwwww better luck next time :( (Click the 'S' to play again)";
+	}
 }//end of gameEnd
 
 
@@ -51,10 +54,7 @@ function restart(){
 	start.onclick=gameStart;
 }//end restart
 
-function noCheats(){
-	_status.textContent="Haha. No Cheating! (Click the 'S' to try again)";
-	maze.onmouseleave=turnRed();//borders turn red if mouse leaves the maze after starting	
-}
+
 
 	
 
