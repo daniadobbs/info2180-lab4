@@ -9,8 +9,8 @@ window.onload= function(){
 	var boundaries= document.querySelectorAll(".boundary");
 	let _status= document.getElementById("status");
 	//$(".boundary").onmouseover=turnRed;
-	
-	start.onmouseover=gameStart;
+	_status.textContent= "Click the S to begin";
+	start.onclick=gameStart;
 	end.onmouseover=gameEnd;
 	
   for(var i=0;i<boundaries.length;i++){
@@ -25,19 +25,20 @@ function turnRed(){
 		boundaries[i].classList.add("youlose");
 	}
 	//winner is set to false if boundary is crossed
-	gameEnd(winner);//calls gameEnd function if mouse crosses boundary
+	gameEnd;//calls gameEnd function if mouse crosses boundary
 }//end of turnRed
 
 
 
-function gameEnd(winner){
+function gameEnd(){
 	if (winner){
-		alert("Congratulations! You Win!");
+		_status.textContent= "Congratulations! You Win! (Click the 'S' to play again)";
+		
 	}
-	else if(winner===false){
-		alert("Awwwww better luck next time");
+	else{
+		_status.textContent= "Awwwww better luck next time :( (Click the 'S' to play again)";
+		
 	}
-	restart;	
 }//end of gameEnd
 
 
@@ -47,7 +48,7 @@ function gameStart(){
 	for (var i = 0; i < boundaries.length; i++) {
         boundaries[i].classList.remove("youlose");
     }
-	status.textContent="Try to get to the end without touching the borders";	
+	_status.textContent="Try to get to the end without touching the borders";	
 }//end gameStart
 
 
