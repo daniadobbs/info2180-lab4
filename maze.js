@@ -5,13 +5,15 @@ window.onload= function(){
 	var start= document.getElementById("start");
 	var end=document.getElementById("end");
 	var boundaries= document.querySelectorAll(".boundary");
-	let _status= document.getElementById("status");
+	var _status= document.getElementById("status");
 	var maze=document.getElementById("maze");
 	//$(".boundary").onmouseover=turnRed;
 	_status.textContent= "Click the S to begin";
 	start.onclick=gameStart;
 	end.onmouseover=gameEnd;
 	maze.onmouseleave=turnRed;
+	
+	
 	
   for(var i=0;i<boundaries.length;i++){
     boundaries[i].onmouseover=turnRed;
@@ -53,6 +55,7 @@ function gameStart(){
 function restart(){
 	start.onclick=gameStart;
 }//end restart
+
 
 
 
